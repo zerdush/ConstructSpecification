@@ -1,0 +1,3334 @@
+{
+  "x-generator": "NSwag v14.0.3.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))",
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Projexe API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/Projects/BidPackages/{bidPackageId}/BidForms": {
+      "get": {
+        "tags": [
+          "BidForms"
+        ],
+        "operationId": "GetBidForms",
+        "parameters": [
+          {
+            "name": "bidPackageId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BidFormSummaryDto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Projects/BidPackages/BidForms/{id}": {
+      "get": {
+        "tags": [
+          "BidForms"
+        ],
+        "operationId": "GetBidForm",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BidFormDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Projects/BidPackages/BidForms/{id}/Documents": {
+      "get": {
+        "tags": [
+          "BidForms"
+        ],
+        "operationId": "GetBidFormDocumentDownloadLinks",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DownloadLinkDto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Projects/BidPackages/BidForms": {
+      "post": {
+        "tags": [
+          "BidForms"
+        ],
+        "operationId": "CreateBidForm",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBidFormCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "BidForms"
+        ],
+        "operationId": "UpdateBidForm",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBidFormCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Projects/BidPackages/BidForms/{id}/Submit": {
+      "put": {
+        "tags": [
+          "BidForms"
+        ],
+        "operationId": "SubmitBidForm",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Projects/BidPackages/BidForms/{id}/Cancel": {
+      "put": {
+        "tags": [
+          "BidForms"
+        ],
+        "operationId": "CancelBidForm",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Projects/BidPackages/BidForms/Award": {
+      "put": {
+        "tags": [
+          "BidForms"
+        ],
+        "operationId": "AwardBidForm",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AwardBidFormCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Projects/BidPackages/{bidPackageId}/Documents/Add": {
+      "post": {
+        "tags": [
+          "BidPackageDocuments"
+        ],
+        "operationId": "AddDocumentToBidPackage",
+        "parameters": [
+          {
+            "name": "bidPackageId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary",
+                    "nullable": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BidPackageDocumentDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Projects/BidPackages/{bidPackageId}/Documents/AddMany": {
+      "post": {
+        "tags": [
+          "BidPackageDocuments"
+        ],
+        "operationId": "AddManyDocumentsToBidPackage",
+        "parameters": [
+          {
+            "name": "bidPackageId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "files": {
+                    "type": "array",
+                    "nullable": true,
+                    "items": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BidPackageDocumentDto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Projects/BidPackages/{bidPackageId}/Documents": {
+      "get": {
+        "tags": [
+          "BidPackageDocuments"
+        ],
+        "operationId": "GetBidPackageDocuments",
+        "parameters": [
+          {
+            "name": "bidPackageId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BidPackageDocumentDto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Projects/{projectId}/BidPackages": {
+      "get": {
+        "tags": [
+          "BidPackages"
+        ],
+        "operationId": "GetBidPackages",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BidPackageSummaryDto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Projects/BidPackages/{id}": {
+      "get": {
+        "tags": [
+          "BidPackages"
+        ],
+        "operationId": "GetBidPackage",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BidPackageDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Projects/BidPackages": {
+      "post": {
+        "tags": [
+          "BidPackages"
+        ],
+        "operationId": "CreateBidPackage",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBidPackageCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Projects/BidPackages/BidForms/BidRounds": {
+      "post": {
+        "tags": [
+          "BidRounds"
+        ],
+        "operationId": "CreateBidRound",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBidRoundCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Projects/BidPackages/BidForms/BidRounds/{id}": {
+      "get": {
+        "tags": [
+          "BidRounds"
+        ],
+        "operationId": "GetBidRound",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BidRoundDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Companies": {
+      "get": {
+        "tags": [
+          "Companies"
+        ],
+        "operationId": "GetCompanies",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CompanyDto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Companies"
+        ],
+        "operationId": "AddCompany",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCompanyCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/CostCodes": {
+      "get": {
+        "tags": [
+          "CostCodes"
+        ],
+        "operationId": "GetCostCodes",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CostCodeDto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Emails": {
+      "post": {
+        "tags": [
+          "Emails"
+        ],
+        "operationId": "SendEmails",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Persons": {
+      "get": {
+        "tags": [
+          "Persons"
+        ],
+        "operationId": "GetPersons",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PersonDto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Projects": {
+      "get": {
+        "tags": [
+          "Projects"
+        ],
+        "operationId": "GetProjects",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectListVm"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Projects"
+        ],
+        "operationId": "UpdateProject",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateProjectCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Projects"
+        ],
+        "operationId": "AddProject",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProjectCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Projects/{id}": {
+      "get": {
+        "tags": [
+          "Projects"
+        ],
+        "operationId": "GetProject",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectDto2"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Users/register": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "operationId": "Register",
+        "requestBody": {
+          "x-name": "registration",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Users/contractor/register": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "operationId": "ContractorRegister",
+        "requestBody": {
+          "x-name": "registerWithTokenRequest",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterWithTokenRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Users/login": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "operationId": "Login",
+        "parameters": [
+          {
+            "name": "useCookies",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "nullable": true
+            },
+            "x-position": 2
+          },
+          {
+            "name": "useSessionCookies",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "nullable": true
+            },
+            "x-position": 3
+          }
+        ],
+        "requestBody": {
+          "x-name": "login",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccessTokenResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Users/refresh": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "operationId": "Refresh",
+        "requestBody": {
+          "x-name": "refreshRequest",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccessTokenResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Countries": {
+      "get": {
+        "tags": [
+          "Countries"
+        ],
+        "operationId": "GetCountries",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CountryDto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Currencies": {
+      "get": {
+        "tags": [
+          "Currencies"
+        ],
+        "operationId": "GetCurrencies",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Incoterms": {
+      "get": {
+        "tags": [
+          "Incoterms"
+        ],
+        "operationId": "GetIncoterms",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IncotermDto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/countries/{countryCode}": {
+      "get": {
+        "tags": [
+          "Locations"
+        ],
+        "operationId": "GetLocations",
+        "parameters": [
+          {
+            "name": "countryCode",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LocationDto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/UnitTypes": {
+      "get": {
+        "tags": [
+          "UnitTypes"
+        ],
+        "operationId": "GetUnitTypes",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UnitType"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Bidders/BidInfo": {
+      "get": {
+        "tags": [
+          "BidInfo"
+        ],
+        "operationId": "GetBidInfo",
+        "parameters": [
+          {
+            "name": "SecureToken",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BidInfoDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Bidders/BidInfo/Documents": {
+      "get": {
+        "tags": [
+          "BidInfo"
+        ],
+        "operationId": "GetBidInfoDocumentDownloadLinks",
+        "parameters": [
+          {
+            "name": "SecureToken",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DownloadLinkDto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Bidders/BidRequests": {
+      "put": {
+        "tags": [
+          "BidRequests"
+        ],
+        "operationId": "ReplyToBidRequest",
+        "parameters": [
+          {
+            "name": "Token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "Reply",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/BidRequestStatus2"
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/Bidders/CheckRegistered": {
+      "get": {
+        "tags": [
+          "BidRequests"
+        ],
+        "operationId": "CheckRegistered",
+        "parameters": [
+          {
+            "name": "Token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/Bidders/Bids": {
+      "post": {
+        "tags": [
+          "Bids"
+        ],
+        "operationId": "AddBid",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddBidCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BidDto2"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Bids"
+        ],
+        "operationId": "UpdateBid",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBidCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BidDto2"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Bidders/Bids/Calculate": {
+      "put": {
+        "tags": [
+          "Bids"
+        ],
+        "operationId": "CalculateBid",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CalculateBidCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BidDto3"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Bidders/Bids/{bidRoundId}": {
+      "get": {
+        "tags": [
+          "Bids"
+        ],
+        "operationId": "GetBid",
+        "parameters": [
+          {
+            "name": "bidRoundId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BidDto2"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BidFormSummaryDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bidPackageId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "lastRoundBidderCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "lastRoundNonBidderCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "BidFormDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bidPackageId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "contactPersons": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PersonDto"
+            }
+          },
+          "issuanceDate": {
+            "type": "string"
+          },
+          "deadlineForQuestions": {
+            "type": "string",
+            "nullable": true
+          },
+          "bidSubmissionDeadline": {
+            "type": "string",
+            "nullable": true
+          },
+          "anticipatedContractAward": {
+            "type": "string",
+            "nullable": true
+          },
+          "scopeOfWork": {
+            "type": "string"
+          },
+          "costCodes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "deliveryDuration": {
+            "$ref": "#/components/schemas/DurationDto"
+          },
+          "paymentSchedule": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentDto"
+            }
+          },
+          "retention": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "retentionReleaseAfterCompletion": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DurationDto"
+              }
+            ]
+          },
+          "warrantyPeriod": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DurationDto"
+              }
+            ]
+          },
+          "performanceBond": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "documents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BidPackageDocumentDto"
+            }
+          },
+          "status": {
+            "type": "string"
+          },
+          "bidRoundIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "lastRoundBidderCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "lastRoundNonBidderCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "lastRoundBidders": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "lastRoundNonBidders": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "lastRoundPotentialBidders": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CompanyDto"
+            }
+          },
+          "location": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/LocationDto"
+              }
+            ]
+          },
+          "incoterm": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "PersonDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "forename": {
+            "type": "string"
+          },
+          "surname": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "phoneNumber": {
+            "type": "string"
+          }
+        }
+      },
+      "DurationDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "value": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "unit": {
+            "type": "string"
+          }
+        }
+      },
+      "PaymentDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "percentage": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "milestone": {
+            "type": "string"
+          }
+        }
+      },
+      "BidPackageDocumentDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "bidPackageId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fileName": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "CompanyDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "trades": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "person": {
+            "$ref": "#/components/schemas/PersonDto"
+          }
+        }
+      },
+      "LocationDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "countryCode": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "subDivisionCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "geoLocation": {
+            "type": "string",
+            "nullable": true
+          },
+          "ports": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "DownloadLinkDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "fileName": {
+            "type": "string"
+          },
+          "downloadLink": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      },
+      "CreateBidFormCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "bidPackageId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "contactPersons": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PersonDto2"
+            }
+          },
+          "issuanceDate": {
+            "type": "string"
+          },
+          "deadlineForQuestions": {
+            "type": "string",
+            "nullable": true
+          },
+          "bidSubmissionDeadline": {
+            "type": "string",
+            "nullable": true
+          },
+          "anticipatedContractAward": {
+            "type": "string",
+            "nullable": true
+          },
+          "scopeOfWork": {
+            "type": "string"
+          },
+          "costCodes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "deliveryDuration": {
+            "$ref": "#/components/schemas/DurationDto"
+          },
+          "paymentSchedule": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentDto"
+            }
+          },
+          "retention": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "retentionReleaseAfterCompletion": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DurationDto"
+              }
+            ]
+          },
+          "warrantyPeriod": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DurationDto"
+              }
+            ]
+          },
+          "performanceBond": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "potentialBidders": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CompanyDto2"
+            }
+          },
+          "documents": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "location": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/LocationDto2"
+              }
+            ]
+          },
+          "incoterm": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "PersonDto2": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "CompanyDto2": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "LocationDto2": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "UpdateBidFormCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "contactPersons": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Person"
+            }
+          },
+          "issuanceDate": {
+            "type": "string"
+          },
+          "deadlineForQuestions": {
+            "type": "string",
+            "nullable": true
+          },
+          "bidSubmissionDeadline": {
+            "type": "string",
+            "nullable": true
+          },
+          "anticipatedContractAward": {
+            "type": "string",
+            "nullable": true
+          },
+          "scopeOfWork": {
+            "type": "string"
+          },
+          "costCodes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "deliveryDuration": {
+            "$ref": "#/components/schemas/DurationDto"
+          },
+          "paymentSchedule": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentDto"
+            }
+          },
+          "retention": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "retentionReleaseAfterCompletion": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DurationDto"
+              }
+            ]
+          },
+          "warrantyPeriod": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DurationDto"
+              }
+            ]
+          },
+          "performanceBond": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "potentialBidders": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Company"
+            }
+          },
+          "documents": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "location": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/LocationDto2"
+              }
+            ]
+          },
+          "incoterm": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Incoterm"
+              }
+            ]
+          }
+        }
+      },
+      "Person": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Company": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Incoterm": {
+        "type": "string",
+        "description": "",
+        "x-enumNames": [
+          "EXW",
+          "FCA",
+          "CPT",
+          "CIP",
+          "DAP",
+          "DPU",
+          "DDP",
+          "FAS",
+          "FOB",
+          "CFR",
+          "CIF"
+        ],
+        "enum": [
+          "EXW",
+          "FCA",
+          "CPT",
+          "CIP",
+          "DAP",
+          "DPU",
+          "DDP",
+          "FAS",
+          "FOB",
+          "CFR",
+          "CIF"
+        ]
+      },
+      "AwardBidFormCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "bidFormId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bidderId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "BidPackageSummaryDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "title": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "dueDate": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      },
+      "BidPackageDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "title": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "dueDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "bidInvitationSent": {
+            "type": "boolean"
+          },
+          "willBidCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "receivedBidCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "primaryContacts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PersonDto"
+            }
+          },
+          "secondaryContacts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PersonDto"
+            }
+          }
+        }
+      },
+      "CreateBidPackageCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "dueDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "projectId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "primaryContactIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "secondaryContactIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        }
+      },
+      "CreateBidRoundCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "bidFormId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "selectedBidders": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        }
+      },
+      "BidRoundDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "bidders": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BidderDto"
+            }
+          }
+        }
+      },
+      "BidderDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "companyName": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/BidRequestStatus"
+          },
+          "bid": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BidDto"
+              }
+            ]
+          }
+        }
+      },
+      "BidRequestStatus": {
+        "type": "string",
+        "description": "",
+        "x-enumNames": [
+          "WaitingForResponse",
+          "Accepted",
+          "Declined",
+          "Cancelled"
+        ],
+        "enum": [
+          "WaitingForResponse",
+          "Accepted",
+          "Declined",
+          "Cancelled"
+        ]
+      },
+      "BidDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/BidStatus"
+          },
+          "costCodeSummaries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CostCodeSummaryDto"
+            }
+          },
+          "totalPriceInBudgetCurrency": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/MoneyDto"
+              }
+            ]
+          },
+          "grossTotalInBudgetCurrency": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/MoneyDto"
+              }
+            ]
+          },
+          "totalPrice": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MoneyDto"
+            }
+          },
+          "grossTotal": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MoneyDto"
+            }
+          },
+          "deliveryDuration": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DurationDto"
+              }
+            ]
+          },
+          "incoterm": {
+            "type": "string",
+            "nullable": true
+          },
+          "deliveryLocation": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/LocationDto2"
+              }
+            ]
+          },
+          "paymentSchedule": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentDto"
+            }
+          },
+          "retention": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "retentionReleaseAfterCompletion": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DurationDto"
+              }
+            ]
+          },
+          "warrantyPeriod": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DurationDto"
+              }
+            ]
+          },
+          "performanceBond": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          }
+        }
+      },
+      "BidStatus": {
+        "type": "string",
+        "description": "",
+        "x-enumNames": [
+          "Draft",
+          "Submitted"
+        ],
+        "enum": [
+          "Draft",
+          "Submitted"
+        ]
+      },
+      "CostCodeSummaryDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "costCode": {
+            "type": "string"
+          },
+          "totalPriceInBudgetCurrency": {
+            "$ref": "#/components/schemas/MoneyDto"
+          },
+          "grossTotalInBudgetCurrency": {
+            "$ref": "#/components/schemas/MoneyDto"
+          }
+        }
+      },
+      "MoneyDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "amount": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "currency": {
+            "$ref": "#/components/schemas/Currency"
+          }
+        }
+      },
+      "Currency": {
+        "type": "string",
+        "description": "",
+        "x-enumNames": [
+          "TRY",
+          "USD",
+          "EUR",
+          "GBP",
+          "CHF",
+          "JPY",
+          "CNY"
+        ],
+        "enum": [
+          "TRY",
+          "USD",
+          "EUR",
+          "GBP",
+          "CHF",
+          "JPY",
+          "CNY"
+        ]
+      },
+      "CreateCompanyCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "trades": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "person": {
+            "$ref": "#/components/schemas/PersonDto3"
+          }
+        }
+      },
+      "PersonDto3": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "CostCodeDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "ProjectListVm": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "projects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProjectDto"
+            }
+          }
+        }
+      },
+      "ProjectDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "budgetCurrency": {
+            "$ref": "#/components/schemas/Currency2"
+          },
+          "category": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "Currency2": {
+        "type": "integer",
+        "description": "",
+        "x-enumNames": [
+          "TRY",
+          "USD",
+          "EUR",
+          "GBP",
+          "CHF",
+          "JPY",
+          "CNY"
+        ],
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "ProjectDto2": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "budgetCurrency": {
+            "$ref": "#/components/schemas/Currency"
+          },
+          "category": {
+            "type": "string",
+            "nullable": true
+          },
+          "location": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/LocationDto"
+              }
+            ]
+          }
+        }
+      },
+      "UpdateProjectCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "budgetCurrency": {
+            "$ref": "#/components/schemas/Currency"
+          },
+          "category": {
+            "type": "string",
+            "nullable": true
+          },
+          "locationId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        }
+      },
+      "CreateProjectCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "budgetCurrency": {
+            "$ref": "#/components/schemas/Currency"
+          },
+          "category": {
+            "type": "string",
+            "nullable": true
+          },
+          "locationId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        }
+      },
+      "HttpValidationProblemDetails": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ProblemDetails"
+          },
+          {
+            "type": "object",
+            "additionalProperties": {
+              "nullable": true
+            },
+            "properties": {
+              "errors": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "additionalProperties": {
+          "nullable": true
+        },
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "RegisterRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "RegisterWithTokenRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "token": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "AccessTokenResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "tokenType": {
+            "type": "string"
+          },
+          "accessToken": {
+            "type": "string"
+          },
+          "expiresIn": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "refreshToken": {
+            "type": "string"
+          }
+        }
+      },
+      "LoginRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "twoFactorCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "twoFactorRecoveryCode": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "RefreshRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "refreshToken": {
+            "type": "string"
+          }
+        }
+      },
+      "CountryDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "IncotermDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "UnitType": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "displayName": {
+            "type": "string"
+          },
+          "definition": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          }
+        }
+      },
+      "BidInfoDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "bidRoundId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "projectName": {
+            "type": "string"
+          },
+          "bidPackageDueDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "bidFormStatus": {
+            "type": "string"
+          },
+          "intention": {
+            "type": "string"
+          },
+          "companyName": {
+            "type": "string"
+          },
+          "contactEmailAddress": {
+            "type": "string"
+          },
+          "scopeOfWork": {
+            "type": "string"
+          },
+          "bidFormName": {
+            "type": "string"
+          },
+          "deliveryDuration": {
+            "$ref": "#/components/schemas/DurationDto"
+          },
+          "incoterm": {
+            "type": "string",
+            "nullable": true
+          },
+          "deliveryLocation": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/LocationDto"
+              }
+            ]
+          },
+          "paymentSchedule": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentDto"
+            }
+          },
+          "retention": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "retentionReleaseAfterCompletion": {
+            "$ref": "#/components/schemas/DurationDto"
+          },
+          "warrantyPeriod": {
+            "$ref": "#/components/schemas/DurationDto"
+          },
+          "performanceBond": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "costCodes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "BidRequestStatus2": {
+        "type": "integer",
+        "description": "",
+        "x-enumNames": [
+          "WaitingForResponse",
+          "Accepted",
+          "Declined",
+          "Cancelled"
+        ],
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "BidDto2": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "status": {
+            "$ref": "#/components/schemas/BidStatus"
+          },
+          "deliveryDuration": {
+            "$ref": "#/components/schemas/DurationDto"
+          },
+          "incoterm": {
+            "type": "string",
+            "nullable": true
+          },
+          "deliveryLocation": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/LocationDto"
+              }
+            ]
+          },
+          "paymentSchedule": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentDto"
+            }
+          },
+          "retention": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "retentionReleaseAfterCompletion": {
+            "$ref": "#/components/schemas/DurationDto"
+          },
+          "warrantyPeriod": {
+            "$ref": "#/components/schemas/DurationDto"
+          },
+          "performanceBond": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "costCodeSummaries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CostCodeSummaryDto"
+            }
+          },
+          "costLines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CostLineDto"
+            }
+          },
+          "totalPriceInBudgetCurrency": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/MoneyDto"
+              }
+            ]
+          },
+          "grossTotalInBudgetCurrency": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/MoneyDto"
+              }
+            ]
+          },
+          "totalPrice": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MoneyDto"
+            }
+          },
+          "grossTotal": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MoneyDto"
+            }
+          }
+        }
+      },
+      "CostLineDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "item": {
+            "type": "string"
+          },
+          "costCode": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "unitType": {
+            "type": "string"
+          },
+          "unitPrice": {
+            "$ref": "#/components/schemas/MoneyDto"
+          },
+          "totalPrice": {
+            "$ref": "#/components/schemas/MoneyDto"
+          },
+          "totalPriceInBudgetCurrency": {
+            "$ref": "#/components/schemas/MoneyDto"
+          },
+          "tax": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "grossTotal": {
+            "$ref": "#/components/schemas/MoneyDto"
+          },
+          "grossTotalInBudgetCurrency": {
+            "$ref": "#/components/schemas/MoneyDto"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "exchangeRatesUsed": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExchangeRateDto"
+            }
+          }
+        }
+      },
+      "ExchangeRateDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "baseCurrency": {
+            "$ref": "#/components/schemas/Currency2"
+          },
+          "quotedCurrency": {
+            "$ref": "#/components/schemas/Currency2"
+          },
+          "rate": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "source": {
+            "type": "string"
+          }
+        }
+      },
+      "AddBidCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "bidRoundId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "status": {
+            "$ref": "#/components/schemas/BidStatus"
+          },
+          "deliveryDuration": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DurationDto"
+              }
+            ]
+          },
+          "incoterm": {
+            "type": "string",
+            "nullable": true
+          },
+          "deliveryLocation": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/LocationDto3"
+              }
+            ]
+          },
+          "paymentSchedule": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentDto"
+            }
+          },
+          "retention": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "retentionReleaseAfterCompletion": {
+            "$ref": "#/components/schemas/DurationDto"
+          },
+          "warrantyPeriod": {
+            "$ref": "#/components/schemas/DurationDto"
+          },
+          "performanceBond": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "inclusive": {
+            "type": "string",
+            "nullable": true
+          },
+          "exclusive": {
+            "type": "string",
+            "nullable": true
+          },
+          "comment": {
+            "type": "string",
+            "nullable": true
+          },
+          "costLines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CostLineDto2"
+            }
+          }
+        }
+      },
+      "LocationDto3": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "CostLineDto2": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "item": {
+            "type": "string"
+          },
+          "costCode": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "unitType": {
+            "type": "string"
+          },
+          "unitPrice": {
+            "$ref": "#/components/schemas/MoneyDto"
+          },
+          "tax": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "comment": {
+            "type": "string"
+          }
+        }
+      },
+      "BidDto3": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "costCodeSummaries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CostCodeSummaryDto"
+            }
+          },
+          "costLines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CostLineDto"
+            }
+          },
+          "totalPriceInBudgetCurrency": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/MoneyDto"
+              }
+            ]
+          },
+          "grossTotalInBudgetCurrency": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/MoneyDto"
+              }
+            ]
+          },
+          "totalPrice": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MoneyDto"
+            }
+          },
+          "grossTotal": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MoneyDto"
+            }
+          }
+        }
+      },
+      "CalculateBidCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "bidRoundId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "costLines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CalculateCostLineDto"
+            }
+          },
+          "saveAsDraft": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CalculateCostLineDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "item": {
+            "type": "string"
+          },
+          "costCode": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "unitType": {
+            "type": "string"
+          },
+          "unitPrice": {
+            "$ref": "#/components/schemas/MoneyDto"
+          },
+          "tax": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "comment": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateBidCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "status": {
+            "$ref": "#/components/schemas/BidStatus"
+          },
+          "deliveryDuration": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DurationDto"
+              }
+            ]
+          },
+          "incoterm": {
+            "type": "string",
+            "nullable": true
+          },
+          "deliveryLocation": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/LocationDto3"
+              }
+            ]
+          },
+          "paymentSchedule": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentDto"
+            }
+          },
+          "retention": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "retentionReleaseAfterCompletion": {
+            "$ref": "#/components/schemas/DurationDto"
+          },
+          "warrantyPeriod": {
+            "$ref": "#/components/schemas/DurationDto"
+          },
+          "performanceBond": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "inclusive": {
+            "type": "string",
+            "nullable": true
+          },
+          "exclusive": {
+            "type": "string",
+            "nullable": true
+          },
+          "comment": {
+            "type": "string",
+            "nullable": true
+          },
+          "costLines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CostLineDto2"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "Type into the textbox: Bearer {your token}.",
+        "name": "Authorization",
+        "in": "header",
+        "scheme": "Bearer"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": []
+    }
+  ]
+}
